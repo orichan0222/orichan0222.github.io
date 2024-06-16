@@ -1,0 +1,130 @@
+
+@use "color";
+@use "breakpoints";
+
+body{
+    font-family:'Oswald','Noto Sans JP', sans-serif;
+    background-color: color.$bg-light;
+    &.is-fixed{
+        overflow: hidden;
+    }
+}
+
+.section{
+    padding: 48px 0;
+
+    &__inner{
+        padding: 0 32px;
+    }
+
+    &__head{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 32px;
+        color: color.$cl-orange;
+        text-align: center;
+        
+    }
+
+    &__head-main{
+        font-size: 40px;
+        letter-spacing: 0.1em;
+        
+
+        &--l{
+            color: color.$white;
+        }
+    }
+
+    &__head-sub{
+        font-size: 11px;
+
+        &--l{
+            color: color.$white;
+        }
+    }
+
+    &__lead-text{
+        font-size: 16px;
+        line-height: 1.6;
+        color:color.$cl-brown;
+        text-align: center;
+    }
+    &__contents{
+        margin-top: 40px;
+    }
+}
+
+.individual{
+    margin-top: 60px;
+
+    &__details{
+        margin-top: 60px;
+    }
+
+    &__works{
+        margin-top: 50px;
+        padding: 25px 12px;
+        border-radius: 20px;
+        box-shadow: 7px 10px color.$cl-orange;
+        background: color.$white;
+        text-align: center;
+        
+    }
+
+    &__title{
+        font-size: 18px;
+        color: color.$cl-orange;
+    }
+
+    &__text{
+        color: color.$cl-brown;
+        font-size: 12px;
+        margin-top: 20px;
+    }
+
+    li{
+        margin: 10px 0;
+    }
+
+}
+
+/*--------------------------------
+//pc
+--------------------------------*/
+@include breakpoints.mq(pc){
+
+.section{
+    &__head-main{
+        font-size: 80px;
+        letter-spacing: 0.1em;
+        }
+
+    &__head-sub{
+        font-size: 18px;
+        }
+
+    &__lead-text{
+            font-size:22px;
+        }
+    }
+
+.individual{
+
+        &__works{
+        margin-top: 110px;
+        padding: 50px 22px;
+        }
+        .individual__works:first-child{
+            margin-top: 0px;
+        }
+
+        &__title{
+            font-size: 22px;
+        }
+
+        &__text{
+            font-size: 16px;
+        }
+    }
+}
